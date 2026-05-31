@@ -1,0 +1,10 @@
+.temp-history {
+  min-width: 0;
+}
+
+.temp-history__note {
+  margin: 0 0 0.875rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

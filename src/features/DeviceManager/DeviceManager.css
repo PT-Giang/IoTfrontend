@@ -1,0 +1,95 @@
+.device-manager {
+  display: grid;
+  gap: 1rem;
+}
+
+.device-list,
+.sensor-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.device-row,
+.sensor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #ffffff;
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.device-row--active {
+  border-color: rgba(15, 118, 110, 0.35);
+  background: #f0fdfa;
+}
+
+.device-row__summary,
+.sensor-row__summary {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 0.75rem;
+}
+
+.device-row__icon,
+.sensor-row__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius);
+  color: var(--color-muted);
+  background: var(--color-surface-muted);
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.device-row--active .device-row__icon {
+  color: #a16207;
+  background: #fef3c7;
+}
+
+.device-row h3,
+.sensor-row h3 {
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.device-row p,
+.sensor-row p {
+  margin: 0.2rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.sensor-row strong {
+  flex: 0 0 auto;
+  color: var(--color-primary-strong);
+  font-size: 1.15rem;
+}
+
+.temperature-card .card__body {
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 420px) {
+  .device-row,
+  .sensor-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

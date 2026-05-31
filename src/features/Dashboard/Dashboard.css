@@ -1,0 +1,133 @@
+.dashboard {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-primary-strong);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.dashboard h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.dashboard__description {
+  max-width: 620px;
+  margin: 0.75rem 0 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card .card__body {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.stat-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius);
+}
+
+.stat-card__icon--teal {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
+.stat-card__icon--gold {
+  color: #a16207;
+  background: #fef3c7;
+}
+
+.stat-card__icon--red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.stat-card__icon--blue {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.stat-card__label {
+  margin: 0 0 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.stat-card__value {
+  display: block;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .dashboard__stats,
+  .dashboard__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard__grid {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .dashboard {
+    width: min(100% - 1rem, 1180px);
+    padding: 1rem 0;
+  }
+
+  .dashboard__header {
+    display: block;
+  }
+
+  .dashboard__stats,
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard h1 {
+    font-size: 2rem;
+  }
+}
