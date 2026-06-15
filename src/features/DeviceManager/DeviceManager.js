@@ -1,4 +1,4 @@
-import { Lightbulb, ThermometerSun } from 'lucide-react';
+import { Droplets, Lightbulb, ThermometerSun } from 'lucide-react';
 import Card from '../../components/Card/Card';
 import Toggle from '../../components/Toggle/Toggle';
 import { useDevices } from '../../context/DeviceContext';
@@ -49,7 +49,13 @@ function DeviceManager() {
                   <p>{sensor.room}</p>
                 </div>
               </div>
-              <strong>{sensor.temperature.toFixed(1)}°C</strong>
+              <div className="sensor-row__readings" aria-label={`${sensor.name} readings`}>
+                <strong>{sensor.temperature.toFixed(1)}°C</strong>
+                <span>
+                  <Droplets size={16} aria-hidden="true" />
+                  {sensor.humidity ?? '--'}%
+                </span>
+              </div>
             </article>
           ))}
         </div>

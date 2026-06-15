@@ -76,10 +76,27 @@
   font-size: 0.82rem;
 }
 
-.sensor-row strong {
+.sensor-row__readings {
+  display: inline-flex;
+  align-items: flex-end;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sensor-row__readings strong {
   flex: 0 0 auto;
   color: var(--color-primary-strong);
   font-size: 1.15rem;
+}
+
+.sensor-row__readings span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 .temperature-card .card__body {
